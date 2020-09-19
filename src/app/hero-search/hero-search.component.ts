@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable, Subject} from 'rxjs';
+import { Hero } from '../hero';
 
 @Component({
   selector: 'app-hero-search',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroSearchComponent implements OnInit {
 
+  heroes$: Observable<Hero[]>;
+  private searchTerms = new Subject<string>();
+
   constructor() { }
+
+  search(term: string): void {
+    this.searchTerms.next(term);
+  }
 
   ngOnInit(): void {
   }
