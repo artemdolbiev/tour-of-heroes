@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Hero } from './hero';
-import {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
