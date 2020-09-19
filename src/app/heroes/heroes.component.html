@@ -2,9 +2,9 @@
 
 <div>
   <label>Hero name:
-    <input>
+    <input #heroName>
   </label>
-  <button (click)="add(hero.value)">
+  <button (click)="add(heroName.value); heroName.value=''">
     add
   </button>
 </div>
@@ -12,7 +12,7 @@
 <ul class="heroes">
   <li *ngFor="let of hero of heroes">
     <a routerLink="/detail/{{hero.id}}">
-      <span class="badge"></span>
+      <span class="badge"></span> {{hero.name}}
     </a>
     <button class="delete" title="delete hero" (click)="delete(hero)">x
     </button>
