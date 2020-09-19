@@ -1,1 +1,20 @@
-<p>heroes works!</p>
+<h1>My Heroes</h1>
+
+<div>
+  <label>Hero name:
+    <input>
+  </label>
+  <button (click)="add(hero.value)">
+    add
+  </button>
+</div>
+
+<ul class="heroes">
+  <li *ngFor="let of hero of heroes">
+    <a>
+      <span class="badge"></span>
+    </a>
+    <button class="delete" title="delete hero" (click)="delete(hero)">x
+    </button>
+  </li>
+</ul>
